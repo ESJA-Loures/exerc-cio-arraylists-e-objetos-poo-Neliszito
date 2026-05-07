@@ -23,8 +23,9 @@ public class Main2 {
             switch (opcao) {
                 case 1:
                     System.out.print("Nome da tarefa a adicionar: ");
-                    
+                    String nomeTarefa = leitor.nextLine();
                     System.out.println("Tarefa adicionada!");
+                    tarefas.add(nomeTarefa);
                     break;
 
                 case 2:
@@ -32,7 +33,9 @@ public class Main2 {
                     if (tarefas.isEmpty()) {
                         System.out.println("A lista está vazia.");
                     } else {
-                        
+                        for(String tarefa : tarefas) {
+                        	System.out.println(tarefa);
+                        }
                     }
                     break;
 
@@ -40,7 +43,7 @@ public class Main2 {
                     System.out.print("Número da tarefa a remover: ");
                     int id = leitor.nextInt();
                     if (id >= 0 && id < tarefas.size()) {
-                       
+                       tarefas.remove(id-1);
                         System.out.println("Tarefa removida!");
                     } else {
                         System.out.println("Índice inválido.");
@@ -50,7 +53,7 @@ public class Main2 {
                 case 4:
                     System.out.println("A sair... Xauzinho!");
                     break;
-
+                    
                 default:
                     System.out.println("Opção inválida, tenta novamente.");
             }
